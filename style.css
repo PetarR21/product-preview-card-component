@@ -1,0 +1,155 @@
+:root {
+  --clr-primary: hsl(158, 36%, 37%);
+  --clr-primary-dark: hsl(158, 36%, 27%);
+  --clr-secondary: hsl(30, 38%, 92%);
+
+  --clr-neutral-dark: hsl(212, 21%, 14%);
+  --clr-neutal-light: hsl(228, 12%, 48%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: 'Fraunces', serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* General */
+body {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  color: var(--clr-neutal-light);
+  background-color: var(--clr-secondary);
+
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/*Product*/
+.product {
+  display: grid;
+  background-color: var(--clr-white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+@media (min-width: 600px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product__content {
+    padding: 2rem;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+.product__content {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.product__type {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.825rem;
+}
+
+.product__title {
+  font-size: 2rem;
+  font-family: var(--ff-secondary);
+  color: var(--clr-neutral-dark);
+}
+
+.product__price {
+  font-size: 2rem;
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary);
+}
+
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+  font-size: 0.875rem;
+}
+
+.button::before {
+  content: '';
+  background-image: url(./images/icon-cart.svg);
+  width: 15px;
+  height: 16px;
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--clr-primary-dark);
+}
